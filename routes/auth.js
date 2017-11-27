@@ -3,7 +3,7 @@ const router = express.Router();
 const passport =require('passport');
 
 
-router.get('/auth',passport.authenticate('google',{
+router.get('/google',passport.authenticate('google',{
     scope:['profile','email']
 }))
 
