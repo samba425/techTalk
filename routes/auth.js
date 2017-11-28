@@ -13,4 +13,17 @@ passport.authenticate('google',{failureRedirect: '/' }),(req,res) => {
     res.redirect('/dashboard');
 });
 
+router.get('/verify',(req,res) => {
+  if(req.user) {
+      console.log("hi....",req.user)
+  } else{
+      console.log("not Auth")
+  }
+})
+
+router.get('/logout',(req,res) => {
+    req.logout();
+    res.redirect('/');
+})
+
 module.exports = router;
